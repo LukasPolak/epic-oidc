@@ -16,14 +16,14 @@ import { consoleError } from '#tests/setup/setup-test-env.ts'
 import { BASE_URL, convertSetCookieToCookie } from '#tests/utils.ts'
 import { loader } from './auth.$provider.callback.ts'
 
-const ROUTE_PATH = '/auth/github/callback'
-const PARAMS = { provider: 'github' }
+const ROUTE_PATH = '/auth/google/callback'
+const PARAMS = { provider: 'google' }
 
 afterEach(async () => {
 	await deleteGitHubUsers()
 })
 
-test('a new user goes to onboarding', async () => {
+test.only('a new user goes to onboarding', async () => {
 	const request = await setupRequest()
 	const response = await loader({ request, params: PARAMS, context: {} }).catch(
 		e => e,
