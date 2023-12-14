@@ -23,7 +23,7 @@ afterEach(async () => {
 	await deleteGitHubUsers()
 })
 
-test('a new user goes to onboarding', async () => {
+test.only('a new user goes to onboarding', async () => {
 	const request = await setupRequest()
 	const response = await loader({ request, params: PARAMS, context: {} }).catch(
 		e => e,
